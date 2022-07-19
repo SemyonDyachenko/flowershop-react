@@ -1,0 +1,66 @@
+@import '../../../scss/colors.scss';
+
+.button {
+  padding: 8px 25px;
+  outline: none;
+  background-color: $brandColor;
+  border: 1px solid $background;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 19px;
+  cursor: pointer;
+
+  &--black {
+    background: $black;
+  }
+
+  &--outline {
+    color: $brandColor;
+    background-color: $background;
+    border: 1px solid $brandColor;
+  }
+
+  &--circle {
+    border-radius: 100px;
+  }
+
+  &--outline:hover {
+    background-color: $brandColor;
+    border: 1px solid #fff;
+    color: #fff;
+    transition: 0.15s;
+  }
+
+  &:hover {
+    &:active {
+      background-color: darken($brandColor, 8%);
+      transition: 0.15s;
+    }
+  }
+
+  &__delimiter {
+    width: 1px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.25);
+    margin-left: 14px;
+    margin-right: 14px;
+  }
+
+  &--cart {
+    display: flex;
+    align-items: center;
+    line-height: 23px;
+    padding: 12px 25px;
+
+    svg {
+      margin-right: 8px;
+      margin-bottom: 1px;
+    }
+
+    span {
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+}

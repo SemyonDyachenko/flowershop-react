@@ -1,0 +1,84 @@
+@import '../../scss/colors.scss';
+
+.auth {
+  margin-top: 20px;
+  text-align: center;
+
+  h2 {
+    font-size: 25px;
+    margin: 15px 0;
+  }
+
+  &--options {
+    width: 100%;
+    float: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+
+    .password-reset-link {
+      text-decoration: underline;
+      cursor: pointer;
+      font-size: 13px;
+      color: rgb(95, 95, 95);
+    }
+
+    .password-save-checkbox {
+      padding: 45px;
+    }
+
+    .save-password-section {
+      display: flex;
+      float: left;
+      align-items: center;
+      width: auto;
+
+      div {
+        float: left;
+        width: auto;
+      }
+      div:first-child {
+        margin-top: 5px;
+      }
+    }
+  }
+
+  button {
+    margin: 15px 0;
+    width: 150px;
+  }
+
+  .social-links-title {
+    margin: 5px 0;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    color: rgb(95, 95, 95);
+  }
+
+  .social-links {
+    padding: 0 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div > svg {
+      margin: 10px;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+    }
+  }
+
+  .signup-link-section {
+    margin: 10px 0;
+    font-size: 17px;
+
+    span {
+      text-decoration: underline;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}

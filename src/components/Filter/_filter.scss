@@ -1,0 +1,64 @@
+@import '../../scss/colors.scss';
+
+.arrow-img {
+  margin-right: 7px;
+  margin-bottom: 2px;
+}
+
+.sort {
+  position: relative;
+  margin: 0 5%;
+  &__label {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 8px;
+
+      &.rotated {
+        transform: rotate(180deg);
+        transition: 0.2s;
+      }
+    }
+
+    b {
+      margin-right: 8px;
+    }
+
+    span {
+      color: $brandColor;
+      border-bottom: 1px dashed $brandColor;
+      cursor: pointer;
+    }
+  }
+
+  &__popup {
+    position: absolute;
+    right: 0;
+    margin-top: 15px;
+    background: #ffffff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px 0;
+    width: 160px;
+
+    ul {
+      overflow: hidden;
+      li {
+        padding: 12px 20px;
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+          background: rgba(22, 105, 99, 0.05);
+        }
+
+        &.active {
+          font-weight: bold;
+          color: $brandColor;
+        }
+      }
+    }
+  }
+}

@@ -11,13 +11,23 @@
   line-height: 19px;
   cursor: pointer;
 
+  &--clear {
+    border: none;
+    background-color: #fff;
+  }
+
+  &--clear:active {
+    opacity: 0.8;
+    transition: 0.15s;
+  }
+
   &--black {
     background: $black;
   }
 
   &--outline {
     color: $brandColor;
-    background-color: $background;
+    background-color: #fff;
     border: 1px solid $brandColor;
   }
 
@@ -32,7 +42,7 @@
     transition: 0.15s;
   }
 
-  &:hover {
+  &:hover:not(&--clear) {
     &:active {
       background-color: darken($brandColor, 8%);
       transition: 0.15s;

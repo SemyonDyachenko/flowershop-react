@@ -1,3 +1,4 @@
+@import '../../scss/colors.scss';
 .header {
   border-bottom: 1px solid #f6f6f6;
   padding: 40px 0;
@@ -6,6 +7,21 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
+
+  .header__cart {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .account-section {
+      margin-right: 10px;
+
+      button {
+        font-size: 20px;
+        color: $brandColor;
+      }
+    }
   }
 
   &__logo {

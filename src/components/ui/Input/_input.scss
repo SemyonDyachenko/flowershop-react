@@ -1,0 +1,17 @@
+.text-field {
+  padding: 10px;
+  text-align: center;
+
+  input {
+    width: 100%;
+    height: 36px;
+    padding: 0 15px;
+    border-radius: 1000px;
+    background: #f4f6f8;
+    outline: none;
+    border: none;
+    color: rgb(129, 129, 129);
+    font-size: 18px;
+    font-weight: 500;
+  }
+}

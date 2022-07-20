@@ -17,7 +17,7 @@ const StartPage = () => {
         'startpage-container--hidden': hidden,
       })}>
       <div className="image">
-        <img src={startImage} alt="image.jpg" />
+        <img src={startImage} alt="startpage.jpg" />
       </div>
       <div>
         <div className="content">

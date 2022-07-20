@@ -3,8 +3,9 @@ import './_header.scss'
 import { Link } from 'react-router-dom'
 import Button from '../ui/Button/Button'
 import logoSvg from '../../assets/images/logo.svg'
+import { FaUser } from 'react-icons/fa'
 
-const Header = () => {
+const Header = ({ openAuthForm }) => {
   return (
     <div className="header">
       <div className="container">
@@ -19,6 +20,11 @@ const Header = () => {
         </Link>
 
         <div className="header__cart">
+          <div className="account-section">
+            <Button onClick={openAuthForm} className="button--clear">
+              <FaUser />
+            </Button>
+          </div>
           <Button className="button--cart" circle>
             <span>1000 ₽</span>
             <div className="button__delimiter"></div>

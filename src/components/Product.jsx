@@ -2,10 +2,10 @@ import React from 'react'
 import Button from './ui/Button/Button'
 import testImg from '../assets/images/image 2.png'
 
-const Product = ({ product }) => {
+const Product = ({ product, openInfo }) => {
   return (
     <div className="product">
-      <div className="product--image">
+      <div onClick={openInfo} className="product--image">
         <img src={testImg} alt="product1.jpg" />
       </div>
       <div className="product--content">

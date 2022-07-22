@@ -6,7 +6,7 @@ import classNames from 'classnames'
 const StartPage = () => {
   const [hidden, setHidden] = useState(false)
 
-  function hide() {
+  const hide = () => {
     setHidden(true)
     localStorage.setItem('startpage', false)
   }
@@ -35,7 +35,13 @@ const StartPage = () => {
             </div>
           </div>
           <div className="shop-button">
-            <Button onClick={() => hide()}>Смотреть товары</Button>
+            <Button
+              onClick={() => {
+                hide()
+                document.body.style.overflow = 'inheriat'
+              }}>
+              Смотреть товары
+            </Button>
           </div>
         </div>
       </div>

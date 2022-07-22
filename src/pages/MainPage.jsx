@@ -1,47 +1,30 @@
+import classNames from 'classnames'
 import React, { useState } from 'react'
-import AuthForm from '../components/AuthForm/AuthForm'
+import Modal from '../components/popup/Modal'
 import Categories from '../components/Categories/Categories'
 import Filter from '../components/Filter/Filter'
-import Header from '../components/Header/Header'
-import Modal from '../components/popup/Modal'
 import ProductList from '../components/ProductList'
-import Button from '../components/ui/Button/Button'
-import Input from '../components/ui/Input/Input'
+import ProductInfo from '../components/ProductInfo/ProductInfo'
+const filterData = require('../assets/data/filterData.json')
 
 const MainPage = () => {
-  const [authFormActive, setAuthFormActive] = useState(false)
+  const [productInfoVisible, setProductInfoVisible] = useState(false)
+  const [productInfo, setProductInfo] = useState({})
 
+  const openProductInfo = (product) => {
+    setProductInfoVisible(true)
+    setProductInfo(product)
+  }
   return (
-    <div
-      style={{
-        position: 'relative',
-        zIndex: 1,
-        maxWidth: '1440px',
-        width: '100%',
-        margin: '0 auto',
-      }}>
-      <Header openAuthForm={() => setAuthFormActive(true)} />
+    <div className="main">
       <div className="topbar">
-        <Categories
-          categiores={[
-            { name: 'Лимоны', category: 'lemon' },
-            { name: 'Кактусы', category: 'lemon' },
-            { name: 'Гранаты', category: 'lemon' },
-          ]}
-        />
-        <Filter
-          items={[
-            { name: 'Популярности', type: 'popular' },
-            { name: 'Цене', type: 'price' },
-            { name: 'Алфавиту', type: 'alphabet' },
-          ]}
-        />
+        <Categories categiores={filterData.categories} />
+        <Filter items={filterData.sort} />
       </div>
-
-      <Modal width={450} active={authFormActive} setActive={setAuthFormActive}>
-        <AuthForm defaultformType={'login'} />
+      <Modal active={productInfoVisible} setActive={setProductInfoVisible}>
+        <ProductInfo product={productInfo} />
       </Modal>
-      <ProductList />
+      <ProductList openProductInfo={openProductInfo} />
     </div>
   )
 }

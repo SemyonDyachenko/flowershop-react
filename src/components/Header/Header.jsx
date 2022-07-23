@@ -5,8 +5,10 @@ import Button from '../ui/Button/Button'
 import logoSvg from '../../assets/images/logo.svg'
 import { FaUser } from 'react-icons/fa'
 import { CART_ROUTE, MAIN_ROUTE } from '../../utils/constans'
-
+import { useAuth } from '../../hooks/useAuth'
 const Header = ({ openAuthForm }) => {
+  const auth = useAuth()
+
   return (
     <div className="header">
       <div className="container">
@@ -22,7 +24,7 @@ const Header = ({ openAuthForm }) => {
 
         <div className="header__cart">
           <div className="account-section">
-            <Button onClick={openAuthForm} className="button--clear">
+            <Button onClick={auth.isAuth() && openAuthForm} className="button--clear">
               <FaUser />
             </Button>
           </div>
